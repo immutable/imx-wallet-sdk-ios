@@ -22,6 +22,8 @@ Session management is handled for you and any changes to the wallets connection 
 
 ## Installation
 
+This SDK is closed source and only available as a XCTFramework through Cocoapods.
+
 ### Prerequisites
 
 * iOS 13.0
@@ -32,6 +34,9 @@ Session management is handled for you and any changes to the wallets connection 
 In your `Podfile`:
 
 ```ruby
+# Important: ensure this source is specified in the Podfile
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '13.0'
 use_frameworks!
 
@@ -42,7 +47,9 @@ end
 
 ## Handle callbacks
 
-All the `ImmutableXWallet` methods (connect, disconnect, etc.) are asynchronous, and changes to the status are communicated via the callback.
+All the `ImmutableXWallet` methods (connect, disconnect, etc.) are asynchronous, and will only return when they've completed the operation. If a user is taken to a wallet app for a connection or signature and does not perform the required operation, the request will not complete, leading to a [pending state](#pending-states) that is communicated via the callback.
+
+Status callbacks are also useful for listening to status updates triggered from different screens.
 
 ### Set callback
 
