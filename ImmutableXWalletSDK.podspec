@@ -1,13 +1,9 @@
 Pod::Spec.new do |s|
     s.name             = 'ImmutableXWalletSDK'
-    s.version          = '0.1.0'
-    s.summary          = 'The ImmutableX Wallet SDK iOS for applications written on the ImmutableX platform.'
+    s.version          = '0.2.0'
+    s.summary          = 'The ImmutableX Wallet SDK iOS has been deprecated.'
     s.description      = <<-DESC
-    The ImmutableX Wallet SDK iOS provides an easy way to connect your users Layer 1 Ethereum wallets and the derivation of an Immutable Layer 2 wallet.
-
-    Once both wallets are connected you will have access to the Signer (L1 wallet) and StarkSigner (L2 wallet) which can be used to perform transactions on ImmutableX.
-
-    Session management is handled for you and any changes to the wallets connection will be notified through the callback.
+    The ImmutableX Wallet SDK iOS has been deprecated. To build apps with Immutable, please use Immutable's Unified SDK.
                           DESC
     s.homepage         = 'https://github.com/immutable/imx-wallet-sdk-ios'
     s.license          = { :type => 'Apache License 2.0', :file => 'LICENSE' }
